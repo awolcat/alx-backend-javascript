@@ -9,10 +9,11 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   promises.push(signUp);
   promises.push(photo);
   return Promise.allSettled(promises).then((results) => {
+    /* eslint-disable-next-line */
     results.map((result) => {
       output.push({
         status: result.status,
-        value: result.status === 'rejected' ? result.reason.toString() : result.value 
+        value: result.status === 'rejected' ? result.reason.toString() : result.value,
       });
     });
     return output;
