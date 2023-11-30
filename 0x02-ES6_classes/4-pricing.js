@@ -1,3 +1,5 @@
+/* eslint no-underscore-dangle: 0 */
+/* eslint-disable-next-line */
 import Currency from './3-currency';
 
 export default class Pricing {
@@ -13,6 +15,7 @@ export default class Pricing {
 
   /* Setters */
   set amount(x) { this._amount = x; }
+
   set currency(x) { this._currency = x; }
 
   displayFullPrice() { return `${this._amount} ${this._currency.name} (${this._currency.code})`; }
