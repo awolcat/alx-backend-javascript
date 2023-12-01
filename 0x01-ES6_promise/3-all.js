@@ -1,8 +1,9 @@
-import { uploadPhoto, createUser } from './utils';
+/* eslint-disable-next-line */
+import { uploadPhoto, createUser } from './utils.js';
 
 export default function handleProfileSignup() {
-  const userData = createUser();
   const photoData = uploadPhoto();
+  const userData = createUser();
   Promise.all([photoData, userData])
     .then(([photoRes, userRes]) => {
       console.log(`${photoRes.body} ${userRes.firstName} ${userRes.lastName}`);
